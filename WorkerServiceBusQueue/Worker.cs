@@ -16,6 +16,9 @@ namespace WorkerServiceBusQueue
         public Worker(ILogger<Worker> logger,
             ParametrosExecucao parametrosExecucao)
         {
+            logger.LogInformation(
+                $"Queue = {parametrosExecucao.Queue}");
+
             _logger = logger;
             _parametrosExecucao = parametrosExecucao;
             _client = new (
